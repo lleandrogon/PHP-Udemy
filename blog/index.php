@@ -6,17 +6,23 @@
     require_once "sistema/configuracao.php";
     include_once "helpers.php";
 
-    /* if (validarEmail("teste@hotmail.com")) {
-        echo "Endereço de e-mail válido";
-    } else {
-        echo "E-mail inválido";
-    } */
+    echo saudacao() . " hoje é " . dataAtual();
 
-    $url = "https://unset.";
-
-    var_dump(validarUrl($url));
+    //$meses = array();
+    /* $meses = [
+        "j" => "Janeiro", 
+        "f" => "Fevereiro", 
+        "Março"
+    ];
+    foreach ($meses as $chave => $valor) {
+        echo $valor."<br>";
+    }
+    
     echo "<hr>";
-    var_dump(validarUrlComFiltro($url));
+    var_dump($meses);
 
-    //var_dump(validarEmail("teste@gmail.com"));
+    echo "<hr>";
+    echo $_SERVER["SCRIPT_FILENAME"];
+    echo "<hr>";
+    var_dump($_SERVER); */
 ?>

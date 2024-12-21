@@ -1,6 +1,53 @@
 <?php
 
+    function dataAtual(): string {
+        $diaMes = date("d");
+        $diaSemana = date("w");
+        $mes = date("n") - 1;
+        $ano = date("Y");
 
+        $nomesDiasDaSemana = ["domingo", "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado"];
+
+        $nomeDosMeses = [
+            "janeiro",
+            "fevereiro",
+            "março",
+            "abril",
+            "maio",
+            "junho",
+            "julho",
+            "agosto",
+            "setembro",
+            "outubro",
+            "novembro",
+            "dezembro"
+        ];
+
+        $dataFormatada = $nomesDiasDaSemana[$diaSemana] . ", " . $diaMes . " de " . $nomeDosMeses[$mes] . " de " . $ano;
+
+        return $dataFormatada;
+    }
+
+    function url(string $url): string {
+        $servidor = filter_input(INPUT_SERVER, "SERVER_NAME");
+        $ambiente = ($servidor == "localhost" ? URL_DESENVOLVIMENTO : URL_PRODUCAO);
+
+        if (str_starts_with($url, "/")) {
+            return $ambiente.$url;
+        }
+
+        return $ambiente . "/" .$url;
+    }
+
+    function localhost(): bool {
+        $servidor = filter_input(INPUT_SERVER, "SERVER_NAME");
+
+        if (!$servidor == "localhost") {
+            return true;
+        }
+
+        return false;
+    }
 
     /**
      * Valida uma url
@@ -76,7 +123,6 @@
 
     function saudacao(): string {
         $hora = date("H:i:s");
-        echo "$hora";
 
         if ($hora >= 0 && $hora <= 5) {
             $saudacao = "Boa Madrugada";
