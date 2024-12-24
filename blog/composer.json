@@ -1,0 +1,27 @@
+{
+    "name": "ceounset/cursophp8",
+    "description": "Curso de PHP 8",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "sistema\\": "sistema/"
+        },
+        "files": [
+            "sistema/configuracao.php",
+            "sistema/Nucleo/Helpers.php",
+            "sistema/Nucleo/Mensagem.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Leandro Gonçalves",
+            "email": "159172886+lleandrogon@users.noreply.github.com",
+            "homepage": "https://portfolio-leandro-navy.vercel.app/",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=8.0"
+    }
+}
