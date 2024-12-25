@@ -13,4 +13,6 @@
     define("URL_DESENVOLVIMENTO", "http://localhost/blog");
 
     //const SITE_NOME = "UnSet";
+
+    define("URL_SITE", "/PHP-Udemy/blog/");
 ?>
